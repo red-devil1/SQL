@@ -1,0 +1,22 @@
+Experiment No.—1: Introduction to MySQL Environment 
+
+a) Installation of Workbench or XAMPP server  
+b) Create Database “College_DB” 
+Check existing database 
+Drop database 
+c) Create a new MySQL user named college_user with password Password@123. 
+• Create User 
+• Check if user exist 
+• Grant privileges to user  
+• Drop existing User 
+
+SHOW DATABASES;
+Create DATABASES College_DB;
+USE College_DB;
+DROP Database College_DB;
+
+CREATE USER 'college_user'@'localhost' IDENTIFIED BY 'Password@123';
+SELECT User, Host FROM mysql.user WHERE User = 'college_user';
+GRANT ALL PRIVILEGES ON College_DB.* TO 'college_user'@'localhost';
+FLUSH PRIVILEGES;
+DROP USER 'college_user'@'localhost';
