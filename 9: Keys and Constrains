@@ -1,0 +1,46 @@
+Experiment No.—9: Keys and Constrains  
+
+Implement PRIMARY KEY, FOREIGN KEY ,UNIQUE, NOT NULL, CHECK, DEFAULT ,CASCADE / 
+SET NULL on  
+Customers(Customer_ID, Customer_name- not Null, Phone_No- Unique, Gender-check),  
+Categories(Category_id  - auto_increment, category_name-Unique,not null) 
+Products( Id, name-not null, category_id, price, stock_quantity, expiry_date)
+
+
+
+CREATE DATABASE Store_DB:
+
+USE Store_DB;
+
+CREATE TABLE Customers (
+Customer_ID INT PRIMARY KEY,
+Customer_name VARCHAR(100) NOT NULL,
+Phone_No VARCHAR(15) UNIQUE,
+Gender VARCHAR(10),
+CHECK (Gender IN ('Male', 'Female', 'Other'))
+);
+
+CREATE TABLE Categories (
+Category_id INT AUTO_INCREMENT PRIMARY KEY,
+category_name VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE Products (
+Id INT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+category_id INT,
+price DECIMAL(10,2) CHECK (price > 0),
+stock_quantity INT DEFAULT 0,
+expiry_date DATE,
+
+FOREIGN KEY (category_id)
+REFERENCES Categories(Category_id)
+ON DELETE SET NULL
+ON UPDATE CASCADE
+);
+
+DESC Customers;
+
+DESC Categories;
+
+DESC Products;
