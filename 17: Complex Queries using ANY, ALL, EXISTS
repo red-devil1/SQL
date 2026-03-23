@@ -1,0 +1,35 @@
+Experiment No.—17: Complex Queries using ANY, ALL, EXISTS 
+
+Use these logical operators in subqueries for conditional evaluations
+
+SELECT name
+FROM students
+WHERE id = ANY (
+    SELECT student_id
+    FROM enrollments_new
+    WHERE course_id = ANY (
+        SELECT course_id
+        FROM course_details
+        WHERE course_fees > 70000
+    )
+);
+
+
+
+SELECT course_name, course_fees 
+FROM course_details
+WHERE course_fees > ALL ( 
+SELECT course_fees
+FROM course_details
+WHERE duration = 24
+);
+
+
+
+SELECT name
+FROM students s
+WHERE EXISTS (
+    SELECT *
+    FROM enrollments_new e
+    WHERE s.id = e.student_id
+);
