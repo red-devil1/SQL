@@ -1,0 +1,61 @@
+Experiment No.—4: Inserting Data into Tables 
+
+a) Perform single line row insertion add 10 rows in Student table. 
+b) Perform multiline row insertion add 10 rows in enrollment tables, 5 rows in course.
+
+a
+
+INSERT INTO students (name, age, email, address, phone, category)
+VALUES ('Amit Sharma', 28, 'amit.sharma@example.com', 'Mumbai' , '9876543230', 'IT');
+
+INSERT INTO students (name, age, email, address, phone, category)
+VALUES('Priya Patel', 32, 'priya.patel@example.com', 'Noida' , '0123456780', 'HR');
+
+INSERT INTO students (name, age, email, address,  phone, category)
+VALUES('Rahul Mehta', 25, 'rahul.mehta@example.com', 'Delhi', '9988776655', 'Finance');
+
+INSERT INTO students (name, age, email, address,  phone, category)
+VALUES('Sneha Kapoor', 29, 'sneha.kapoor@example.com', 'Assam' ,'9765432100', 'Marketing');
+
+INSERT INTO students (name, age, email, address,  phone, category)
+VALUES('Vikram Singh', 35, 'vikram.singh@example.com', 'Pune', '9345678905', 'Operations');
+
+INSERT INTO students (name, age, email, address,  phone, category)
+VALUES('Anjali Desai', 27, 'anjali.desai@example.com', 'Patna', '9456128789', 'Sales');
+
+INSERT INTO students (name, age, email, address, phone, category)
+VALUES('Rohan Joshi', 31, 'rohan.joshi@example.com', 'Jaipur','9314567810', 'Admin');
+
+INSERT INTO students (name, age, email, address, category, phone)
+VALUES('Meera Nair', 26, 'meera.nair@example.com', 'Kashmir','9823456712', 'Finance');
+
+b
+
+INSERT INTO course_details (course_name, duration, course_fees, category)
+VALUES
+('BSC CS' , 21, 75000.00, 'Technical'),
+('BCA', 31, 70000.00, 'Technical'),
+('BSC IT' , 36, 72000.00, 'Technical'),
+('MSC CS' , 24, 90000.00, 'Technical'),
+('MSC IT', 44, 85000.00, 'Technical');
+
+
+INSERT INTO enrollments_new (student_id, course_id, status)
+VALUES
+(1, 1, 'Active'),
+(2, 1, 'Active'),
+(3, 3, 'Active'),
+(4, 4, 'Active'),
+(5, 5, 'Active'),
+(6, 1, 'Active'),
+(7, 2, 'Active'),
+(8, 3, 'Active'),
+(9, 4, 'Active'),
+(10, 5, 'Active');
+
+SELECT * FROM students;
+
+SELECT * FROM course_details;
+
+SELECT  * FROM enrollments_new;
+
