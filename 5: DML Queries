@@ -1,0 +1,17 @@
+Experiment No.—5: DML Queries 
+
+a) Select all columns from the students table 
+b) Select specific columns (name, email) from students 
+c) Update address of student whose roll no is 10 
+d) Delete student details whose category is student or delete student whose age is below 18 
+
+SELECT * FROM students;
+
+SELECT name, email FROM students;
+
+SELECT * FROM students WHERE id = 9;
+
+DELETE FROM students
+    WHERE age < 18;
+
+SELECT * FROM students;
