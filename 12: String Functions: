@@ -1,0 +1,37 @@
+Experiment No.—12: String Functions: 
+
+Perform The Following SQL String Functions  
+CONCAT(), TRIM(), REPLACE(), REPEAT(), REVERSE(), LCASE()/LOWER(), UCASE()/UPPER(), 
+STRCMP() 
+
+
+
+SELECT CONCAT(name, '-', department) AS Student_Inf0
+FROM students;
+
+
+SELECT TRIM('        Hello World        ') AS Trimmed_Text;
+
+
+SELECT REPLACE(name, 'a', '@') AS Modified_Name
+FROM students;
+
+
+SELECT REPEAT(name, 2) AS Repeated_Name
+FROM students;
+
+
+SELECT REVERSE(name) AS Reversed_Name
+FROM students;
+
+
+SELECT LOWER(name) AS Lowercase_Name
+FROM students;
+
+
+SELECT UPPER(name) AS Uppercase_Name
+FROM students;
+
+
+SELECT STRCMP('Amit', 'amit') AS Comparison_Result;
+
