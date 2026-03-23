@@ -1,0 +1,49 @@
+Experiment No.—6: Aggregate Functions 
+
+a) Find the average age of students 
+b) Find the total fees collected for each course 
+c) Count how many students enrolled in each course 
+d) Count how many students are in each department 
+
+a
+
+SELECT AVG(age) AS Average_Age
+    FROM students;
+
+b
+
+ SELECT course_name,
+    SUM(course_fees) AS Total_Fees
+    FROM course_details
+    GROUP BY course_name;
+
+c
+
+SELECT course_id,
+    COUNT(student_id) AS Total_Students
+    FROM enrollments_new
+    GROUP BY course_id;
+
+d
+
+ALTER TABLE students
+    ADD department VARCHAR(100);
+
+UPDATE students
+SET department = 'Computer Science'
+WHERE id IN (1,2,4,6,9);
+
+UPDATE students
+SET department = 'Information Technology'
+WHERE id IN (5,10);
+
+UPDATE students
+SET department = 'Computer Applications'
+WHERE id = 7;
+
+SELECT department,
+COUNT(*) AS Total_Students
+FROM students
+GROUP BY department;
+
+
