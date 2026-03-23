@@ -1,0 +1,38 @@
+Experiment No.—7: Conditional Queries 
+
+a) Students older than 18 AND from 'Computer' department 
+b) Students whose name starts with 'A' 
+c) Courses with duration BETWEEN 3 and 12 months 
+d) Enrollments where course_id = 2 OR student_id = 5
+
+a
+
+SELECT *
+FROM students
+WHERE age > 18
+AND department = 'Computer Science';
+
+b
+
+SELECT *
+FROM students
+WHERE name LIKE 'A%';
+
+c
+
+UPDATE course_details
+SET duration = 6
+WHERE course_name = 'BCA';
+
+SELECT * FROM course_details;
+
+SELECT *
+FROM course_details
+WHERE duration BETWEEN 3 AND 12;
+
+d
+
+SELECT *
+FROM enrollments_new
+WHERE course_id =2
+OR student_id = 5;
