@@ -1,0 +1,47 @@
+Experiment No.—16: Views and Transactions 
+
+Implement view-based operations and transactions using COMMIT and ROLLBACK 
+
+
+
+CREATE VIEW student_basic_view AS
+SELECT id, name, age, department
+FROM students;
+
+SELECT * FROM student_basic_view;
+
+
+
+UPDATE student_basic_view
+SET department = 'Computer Science'
+WHERE id = 5;
+
+SELECT * FROM students WHERE id = 5;
+
+
+
+
+START TRANSACTION;
+
+UPDATE students
+SET age = 25
+WHERE id = 2;
+
+SELECT * FROM students WHERE id = 2;
+
+ROLLBACK;
+
+SELECT * FROM students WHERE id = 2;
+
+
+
+
+START TRANSACTION;
+
+UPDATE students
+SET age = 24
+WHERE id = 3;
+
+COMMIT;
+
+SELECT * FROM students WHERE id = 3;
