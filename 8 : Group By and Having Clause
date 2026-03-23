@@ -1,0 +1,42 @@
+Experiment No.—8 : Group By and Having Clause 
+ 
+For Tables:  
+Students(name, age, email, phone_no, category) 
+Enrollments(enroll_id, Student_id, course_id, enroll_date) 
+course_details(cname, duration, FEES_DETAILS) 
+a) Write a query to find the total number of students in each category from the Students 
+table. 
+b) Write a query to find the number of students in each age group from the Students 
+table. 
+c) Display categories having more than 3 students 
+d) Find courses having more than 5 enrollments
+
+a
+
+SELECT category,
+COUNT(*) AS Total_Students
+FROM students
+GROUP BY category;
+
+b
+
+SELECT age,
+COUNT(*) AS Total_Students
+FROM students
+GROUP BY age;
+
+c
+
+SELECT category,
+COUNT(*) AS Total_Students
+FROM students
+GROUP BY category
+HAVING COUNT(*) > 3;
+
+d
+
+SELECT course_id,
+COUNT(student_id) AS Total_Enrollments
+FROM enrollments_new
+GROUP BY course_id
+HAVING COUNT(student_id) > 5;
