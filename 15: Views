@@ -1,0 +1,35 @@
+Experiment No.—15: Views 
+
+Perform Queries to:  
+1. Create a view 
+2. Update a view  
+3. Insert values in view  
+4. Drop view
+
+a
+
+CREATE VIEW student_view AS
+SELECT id, name, department
+FROM students;
+
+SELECT * FROM student_view;
+
+b
+
+UPDATE student_view
+SET department = ' Computer Science'
+WHERE id = 7;
+
+SELECT * FROM student_view;
+
+c
+
+INSERT INTO student_view (id, name, department)
+VALUES (2, 'Jay Patil', 'Information Technology');
+
+INSERT INTO student_view (id, name, department)
+VALUES (10, 'Anuvesha', 'Computer Applications');
+
+d
+
+DROP VIEW student_view;
