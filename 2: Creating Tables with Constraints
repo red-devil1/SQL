@@ -1,0 +1,46 @@
+Experiment No.—2: Creating Tables with Constraints 
+
+a) Create a table students (id, name, age, department, email) using appropriate data 
+types. 
+b) Create a table courses (course_id, course_name, duration, fees) using appropriate 
+data types. 
+c) Create a table enrollments (enroll_id, student_id, course_id, enroll_date) using 
+appropriate data types.
+
+ a
+
+CREATE TABLE students (
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+age INT,
+department VARCHAR(100),
+email VARCHAR(100) UNIQUE,
+address VARCHAR(200),
+category VARCHAR(50) DEFAULT 'Student'
+);
+
+DESC students;
+
+b
+
+CREATE TABLE courses (
+course_id INT PRIMARY KEY AUTO_INCREMENT,
+course_name VARCHAR(100) NOT NULL,
+duration INT,
+fees DECIMAL(10,2)
+);
+
+c
+
+CREATE TABLE enrollments (
+enroll_id INT PRIMARY KEY AUTO_INCREMENT,
+student_id INT,
+course_id INT,
+enroll_date DATE,
+FOREIGN KEY (student_id) REFERENCES students(id),
+FOREIGN KEY (course_id) REFERENCES courses(course_id)
+
+);
+
+DESC enrollments;
+DESC courses;
