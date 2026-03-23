@@ -1,0 +1,69 @@
+Experiment No.—10: Joins  
+
+Consider following table  
+students (id, name, age, department, email), courses (course_id, course_name, 
+duration, fees), enrollments (enroll_id, student_id, course_id, enroll_date) 
+Perform: 
+1. Inner join  
+2. Full outer join 
+3. Left join 
+4. Right join 
+
+a
+
+USE College_DB;
+
+SELECT s.id,
+s.name,
+c.course_name
+FROM students s
+INNER JOIN enrollments_new e
+ON s.id = e.student_id
+INNER JOIN course_details c
+ON e.course_id = c.course_id;
+
+b
+
+
+SELECT s.id,
+s.name,
+c.course_name
+FROM students s
+LEFT JOIN enrollments_new e
+ON s.id = e.student_id
+LEFT JOIN course_details c
+ON e.course_id = c.course_id
+
+UNION
+
+
+SELECT s.id,
+s.name,
+c.course_name
+FROM students s
+RIGHT JOIN enrollments_new e
+ON s.id = e.student_id
+RIGHT JOIN course_details c
+ON e.course_id = c.course_id;
+
+C
+
+SELECT s.id,
+s.name,
+c.course_name
+FROM students s
+LEFT JOIN enrollments_new e
+ON s.id = e.student_id
+LEFT JOIN course_details c
+ON e.course_id = c.course_id;
+
+D
+
+SELECT s.id,
+s.name,
+c.course_name
+FROM students s
+RIGHT JOIN enrollments_new e
+ON s.id = e.student_id
+RIGHT JOIN course_details c
+ON e.course_id = c.course_id;
