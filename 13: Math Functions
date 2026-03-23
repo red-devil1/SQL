@@ -1,0 +1,29 @@
+Experiment No.—13: Math Functions 
+
+Perform The Following SQL Mathematical Functions  
+ABS(), CEILING(), FLOOR(), ROUND(), TRUNCATE(), POW(), SQRT(), and RAND().
+
+
+SELECT ABS(-25) AS Absolute_Value;
+
+
+SELECT CEILING(4.3) AS Ceiling_Value;
+
+
+SELECT FLOOR(4.9) AS Floor_Value;
+
+
+SELECT ROUND(5.678,  2) AS Rounded_Value;
+
+
+
+SELECT TRUNCATE(5.678, 2) AS Truncated_Value;
+
+
+SELECT POW(2, 3) AS Power_Value;
+
+
+SELECT SQRT(16) AS Square_Root;
+
+
+SELECT RAND() AS Random_Number;
