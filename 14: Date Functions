@@ -1,0 +1,26 @@
+Experiment No.—14: Date Functions 
+
+Perform The Following SQL Date Functions  
+NOW(),CURDATE(),CURTIME(), EXTRACT(),DATE(),  ADDDATE(), DATE_FORMAT()
+
+
+
+SELECT NOW() AS Current_Date_Time;
+
+
+SELECT CURDATE() AS Today_Date;
+
+
+SELECT CURTIME() AS Current_Time_Value;
+
+
+SELECT EXTRACT(YEAR FROM NOW()) AS Current_Year;
+
+
+SELECT DATE(NOW()) AS Only_Date;
+
+
+SELECT ADDDATE(CURDATE(), INTERVAL 7 DAY) AS Date_After_7_DAYS;
+
+
+SELECT DATE_FORMAT(NOW(), '%d-%m-%Y') AS Formatted_Date;
