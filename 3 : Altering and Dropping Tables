@@ -1,0 +1,59 @@
+Experiment No.—3 : Altering and Dropping Tables 
+
+a) Alter Table Structure - On table students (id, name, age, department, email). 
+Perform the following operations using ALTER TABLE: 
+● Add a new column phone of type VARCHAR(15). 
+● Modify the data type of age to SMALLINT. 
+● Drop the column department from the table. 
+b) Rename Table 
+Perform the following tasks: 
+● Rename the table courses to course_details. 
+● Rename the column fees to course_fees inside the same table. 
+● Add a new column category with default value 'General'. 
+c) Drop Table -  
+Perform the following operations: 
+● Drop the table enrollments from the database. 
+● Recreate a new table enrollments_new (enroll_id, student_id, course_id). 
+● Add a new column status with default 'Active' to enrollments_new.
+
+a
+
+ALTER TABLE students
+ADD phone VARCHAR(15);
+
+ALTER TABLE students
+MODIFY age SMALLINT;
+
+ALTER TABLE students
+DROP COLUMN department;
+
+DESC students;
+
+b
+
+RENAME TABLE courses TO course_details;
+
+ALTER TABLE course_details
+CHANGE fees course_fees DECIMAL(10,2);
+
+ALTER TABLE course_details
+ADD category VARCHAR(50) DEFAULT 'General';
+
+DESC course_details;
+
+c
+
+USE College_DB;
+
+DROP TABLE IF EXISTS enrollments;
+
+CREATE TABLE enrollments_new (
+enroll_id INT PRIMARY KEY AUTO_INCREMENT,
+student_id INT,
+course_id int
+);
+
+ALTER TABLE enrollments_new
+ADD status VARCHAR(20) DEFAULT 'Active';
+
+DESC enrollment_new;
