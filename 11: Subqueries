@@ -1,0 +1,36 @@
+Experiment No.—11: Subqueries  
+
+Perform the following subqueries: 
+1. Find the names of students who are enrolled in a course with fees greater than 50,000. 
+2. Find student names who enrolled in the course with the highest fee
+
+a
+
+SELECT name
+FROM students
+WHERE id IN (
+SELECT student_id
+FROM enrollments_new
+WHERE course_id IN (
+SELECT course_id
+FROM course_details
+WHERE course_fees > 50000
+)
+);
+
+b
+
+SELECT name
+FROM students
+WHERE id IN (
+SELECT student_id
+FROM enrollments_new
+WHERE course_id = (
+SELECT course_id
+FROM course_details
+WHERE course_fees = (
+SELECT MAX(course_fees)
+FROM course_details
+)
+)
+);
